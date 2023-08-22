@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { Viewer, Ion } from 'cesium';
+import { Component } from 'react';
 
-function App() {
+export class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        currentViewer: null,
+    };
+  }
+
+componentDidMount() {
+  Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIyNTZlNTRjMy01ZjZlLTQ4N2YtOTY0MC0xYTNlYTgwZDFmNmMiLCJpZCI6MTU5NzA4LCJpYXQiOjE2OTE2ODk3MzZ9.4vypb5d5T9LsOWBjiDQh0EByNxdCRLQR92znYSLPKo4';
+  const viewer = new Viewer("cesiumContainer");
+  }
+
+render() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+        <div id="cesiumContainer" ></div>
+  )
+}
 }
 
 export default App;
