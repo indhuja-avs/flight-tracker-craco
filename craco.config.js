@@ -4,6 +4,8 @@ const path = require('path');
 const cesiumSource = 'node_modules/cesium/Source';
 const cesiumWorkers = '../Build/Cesium/Workers';
 const CopywebpackPlugin = require('copy-webpack-plugin');
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
+
 module.exports = {
     reactScriptsVersion: 'react-scripts',
     webpack: {
@@ -32,7 +34,8 @@ module.exports = {
             [ new webpack.DefinePlugin({
                 // Define relative base path in cesium for loading assets
                 CESIUM_BASE_URL: JSON.stringify('')
-            }), "append" ]
+            }), "append" ],
+            [ new NodePolyfillPlugin(), "append"]
         ],
         remove: []
         },

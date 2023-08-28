@@ -2,12 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+//import CesiumViewer from './CesiumViewer';
 import reportWebVitals from './reportWebVitals';
 import "cesium/Build/Cesium/Widgets/widgets.css";
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+//const [containerLoaded, setContainer] = React.useState(
 root.render(
   <React.StrictMode>
+    {/* <CesiumViewer /> */}
     <App />
   </React.StrictMode>
 );
